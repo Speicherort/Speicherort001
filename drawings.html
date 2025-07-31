@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Layout</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(240, 240, 240);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: min-content
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+        
+        .profile-img {
+            width: 80px;
+            height: 120px;
+            border: 2px solid transparent;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+            padding: 5px;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-img:hover {
+            border-width: 2px;
+            border-color: rgb(228, 218, 176);
+        }
+        
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        
+        .menu li {
+            margin: 10px 0;
+        }
+        
+        .menu a {
+            display: block;
+            width: 200px;
+            padding: 5px;
+            font-size: 18px;
+            letter-spacing: -1px;
+            transform: scaleY(1.4);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .menu a:hover {
+            font-weight: 800;
+        }
+        
+        .contact-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: -10px;
+            position: relative;
+            /* Add this line */
+        }
+        
+        .contact-icons a img {
+            width: 34px;
+            height: 24px;
+            margin: 0 10px 0 0;
+        }
+        
+        .overlay {
+            position: absolute;
+            bottom: 100%;
+            margin-left: -75px;
+            left: 0;
+            right: 0;
+            background-color: #000000;
+            overflow: hidden;
+            width: 250px;
+            transition: .4s ease;
+            text-align: center;
+        }
+        
+        .contact-icons a:hover .overlay {
+            bottom: 0;
+            height: 100%;
+        }
+        
+        .text {
+            color: white;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            letter-spacing: -1px;
+            transform: scaleY(1.4);
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        #email {
+            display: none;
+        }
+        
+        #phone {
+            display: none;
+        }
+        
+        .slider {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            overflow: hidden;
+            border: 2px solid white;
+            margin-top: 20px;
+            margin: 100px;
+        }
+        
+        .slides {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            padding-bottom: 10px;
+            /* Add padding to create a gap between the image and the border */
+            border: 2px solid white;
+            box-sizing: border-box;
+            /* Ensure padding is included in the total dimensions */
+        }
+        
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .navigation {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .nav-btn {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .nav-btn:focus {
+            outline: none;
+        }
+        
+        .nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .headline {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: -1px;
+            transform: scaleY(1.4);
+            position: absolute;
+            top: 85px;
+            left: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="profile-img">
+            <a href="index.html">
+                <img src="profile.jpg" alt="Profile Image">
+            </a>
+        </div>
+        <div class="menu">
+            <a href="Lebenslauf.html">CV</a>
+            <a href="Hausarbeiten.html">DUTY</a>
+            <a href="Persoenliches.html">CREATIONS</a>
+        </div>
+        <div class="contact-icons">
+            <a href="mailto:andihernig@gmail.com">
+                <img src="email-icon.png" alt="Email Icon">
+                <div class="overlay">
+                    <div class="text">andihernig@gmail.com</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="contact-icons">
+            <a href="https://www.instagram.com/">
+                <img src="instagram-icon.png" alt="Phone Icon">
+                <div class="overlay">
+                    <div class="text">@sinohazard</div>
+                </div>
+            </a>
+        </div>
+        <div class="contact-icons">
+            <a href="tel:+4917623874682">
+                <img src="phone-icon.png" alt="Phone Icon">
+                <div class="overlay">
+                    <div class="text">017623874682</div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <h2 class="headline">DRAWINGS</h2>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="drawings 1.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="drawings 2.jpg" alt="Image 2">
+            </div>
+
+        </div>
+        <div class="navigation">
+            <button class="nav-btn" onclick="moveSlides(-1)">&#8679;</button>
+            <button class="nav-btn" onclick="moveSlides(1)">&#8681;</button>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function moveSlides(direction) {
+            const slides = document.querySelector('.slides');
+            const slideHeight = slides.querySelector('.slide').clientHeight;
+            const totalSlides = slides.children.length;
+
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            slides.style.transform = `translateY(-${currentSlide * slideHeight}px)`;
+        }
+    </script>
+
+
+
+
+</body>
